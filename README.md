@@ -1,18 +1,21 @@
-Grouping Arrays of Hashes
-You work for a tourism agency, and your job is to promote amusement parks. When you're given a list of amusement parks and you need to write code to help organize the data.
+# Grouping Arrays of Hashes
+
+You work for a tourism agency, and your job is to promote amusement parks.  When you're given a list of amusement
+parks and you need to write code to help organize the data.
 
 Your mission, should you choose to accept it, is to group amusement parks by
+* ID
+* Country
 
-ID
-Country
 Please define a test and a class to solve this problem.
 
-Challenge 1 - Indexing by ID
+## Challenge 1 - Indexing by ID
 
 You need to provide a way to get extremely fast access to amusement parks by their ID.
 
 So given the following array:
 
+```ruby
 [
   {
     :id=>546,
@@ -29,8 +32,11 @@ So given the following array:
     :country=>"United States"
    }
  ]
+```
+
 Your code should produce the following hash:
 
+```ruby
 {
   546 => {
     :id=>546,
@@ -47,10 +53,12 @@ Your code should produce the following hash:
     :country=>"United States"
    }
 }
-Challenge 2 - Indexing by Country
+```
+## Challenge 2 - Indexing by Country
 
 So given the following array:
 
+```ruby
 [
   {
     :id=>546,
@@ -74,8 +82,11 @@ So given the following array:
     :country=>"Canada"
   }
 ]
+```
+
 Your code should produce the following hash:
 
+```ruby
 {
   "Canada" => [
     {
@@ -103,3 +114,4 @@ Your code should produce the following hash:
      }
   ]
 }
+```
