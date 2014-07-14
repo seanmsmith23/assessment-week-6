@@ -5,7 +5,7 @@ class ParkFilter
   end
 
   def group_by_id
-    Hash[@parks.map { |hash| [hash[:id], {id: hash[:id], name: hash[:name], city: hash[:city], state: hash[:state], country: hash[:country]}]}]
+    Hash[@parks.map { |hash| [hash[:id], hash] } ]
   end
 
   def group_by_country
