@@ -1,16 +1,105 @@
-# Employee-Filter
+Grouping Arrays of Hashes
+You work for a tourism agency, and your job is to promote amusement parks. When you're given a list of amusement parks and you need to write code to help organize the data.
 
-Write code that will return an array of employees who started before 2006
+Your mission, should you choose to accept it, is to group amusement parks by
 
-Write code that will return an array of strings in the format "First Last (Title) - started `m/d/yyyy`.
+ID
+Country
+Please define a test and a class to solve this problem.
 
-See data from `data/employees.rb` for an example of what the input should look like.
+Challenge 1 - Indexing by ID
 
-# Setup
+You need to provide a way to get extremely fast access to amusement parks by their ID.
 
-* Fork and clone
-* Implement specs and code
+So given the following array:
 
-# When you finish
+[
+  {
+    :id=>546,
+    :name=>"Kalahari Resorts",
+    :city=>"Wisconsin Dells",
+    :state=>"Wisconsin",
+    :country=>"United States"
+  },
+  {
+    :id=>547,
+    :name=>"Little Amerricka",
+    :city=>"Marshall",
+    :state=>"Wisconsin",
+    :country=>"United States"
+   }
+ ]
+Your code should produce the following hash:
 
-Create a Ruby file in the bin directory that runs the code you write against the employee data in data/employees.rb
+{
+  546 => {
+    :id=>546,
+    :name=>"Kalahari Resorts",
+    :city=>"Wisconsin Dells",
+    :state=>"Wisconsin",
+    :country=>"United States"
+  },
+  547 => {
+    :id=>547,
+    :name=>"Little Amerricka",
+    :city=>"Marshall",
+    :state=>"Wisconsin",
+    :country=>"United States"
+   }
+}
+Challenge 2 - Indexing by Country
+
+So given the following array:
+
+[
+  {
+    :id=>546,
+    :name=>"Kalahari Resorts",
+    :city=>"Wisconsin Dells",
+    :state=>"Wisconsin",
+    :country=>"United States"
+  },
+  {
+    :id=>547,
+    :name=>"Little Amerricka",
+    :city=>"Marshall",
+    :state=>"Wisconsin",
+    :country=>"United States"
+   },
+  {
+    :id=>2,
+    :name=>"Calaway Park",
+    :city=>"Calgary",
+    :state=>"Alberta",
+    :country=>"Canada"
+  }
+]
+Your code should produce the following hash:
+
+{
+  "Canada" => [
+    {
+      :id=>2,
+      :name=>"Calaway Park",
+      :city=>"Calgary",
+      :state=>"Alberta",
+      :country=>"Canada"
+    }
+  ],
+  "United States" => [
+    {
+      :id=>546,
+      :name=>"Kalahari Resorts",
+      :city=>"Wisconsin Dells",
+      :state=>"Wisconsin",
+      :country=>"United States"
+    },
+    {
+      :id=>547,
+      :name=>"Little Amerricka",
+      :city=>"Marshall",
+      :state=>"Wisconsin",
+      :country=>"United States"
+     }
+  ]
+}

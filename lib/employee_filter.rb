@@ -1,3 +1,0 @@
-class EmployeeFilter
-
-end
